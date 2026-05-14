@@ -1,0 +1,296 @@
+/* Basic Config------------------------------------------------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "Monte";
+  src: url("./Assets/montserrat.regular.ttf");
+}
+@font-face {
+  font-family: "Horror";
+  src: url("./Assets/DangerNightPersonalUse-owdl4.otf");
+}
+@font-face {
+    font-family: 'MonteBold';
+    src: url('./Assets/montserrat.bold.ttf');
+}
+::selection {
+  color: #d8ebeb;
+  background: #313536;
+}
+body {
+  width: 100vw;
+  height:100vh;
+  overflow: hidden;
+  font-family: "Monte";
+}
+
+/* Basic Config------------------------------------------------------------------------------------ */
+
+/* Navbar Starts Here--------------------------------------------------------------------------- */
+nav {
+  position: absolute;
+  min-height: 30px;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #313536;
+  z-index: 9999;
+}
+nav .wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .wrapper .logo {
+  font-size: 22px;
+  pointer-events: none;
+  font-family: 'MonteBold';
+}
+nav .wrapper .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+}
+nav .wrapper .menu svg {
+  cursor: pointer;
+  display: none;
+}
+nav .wrapper .menu ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+nav .wrapper .menu li {
+  cursor: pointer;
+  font-size: 15px;
+}
+nav .wrapper .menu li:hover{
+  color: rgba(154, 205, 50, 0.75)
+}
+/* Navbar Specially for small devices */
+@media screen and (max-width: 520px) {
+  nav .wrapper .menu {
+    justify-content: flex-end;
+  }
+  nav .wrapper .menu .burger-btn {
+    display: flex;
+  }
+  nav .wrapper .menu ul {
+    z-index: -1;
+    flex-direction: column;
+    position: absolute;
+    top: 0vh;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(30px);
+    justify-content: center;
+    gap: 30px;
+  }
+}
+
+/* Navbar Ends Here---------------------------------------------------------------------------  */
+
+/* Main Landing Page Starts From Here */
+
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height:100vh;
+  overflow: hidden;
+  background: url("./Assets/Graphics/bg2.jpg") no-repeat;
+  background-size: cover;
+  background-position-x: 0;
+  animation: landingPageImgScroll 1.5s forwards
+    cubic-bezier(0.13, 0.42, 0.21, 0.97);
+}
+
+.landing-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(216, 235, 235, 0.14);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-page .hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(920px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  z-index: 10;
+}
+
+@keyframes landingPageImgScroll {
+  0% {
+    background-position-y: 0%;
+  }
+  100% {
+    background-position-y: 100%;
+  }
+}
+
+.landing-page .bg-text {
+  font-size: 60px;
+  width: 100%;
+  text-align: center;
+  color: #313536;
+  font-family: "Horror", "MonteBold", "Monte";
+  animation: landingPageBgTextFade 2s forwards ease-in-out;
+  animation: landingPageBgTextBounce 1s infinite alternate ease-in-out;
+}
+
+.landing-page .bg-text__num {
+  font-family: "MonteBold", "Monte";
+}
+
+.landing-page .proceed-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #313536;
+  font-family: "MonteBold";
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(49, 53, 54, 0.45);
+  background: rgba(216, 235, 235, 0.18);
+  backdrop-filter: blur(10px);
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease,
+    border-color 200ms ease;
+}
+
+.landing-page .proceed-btn:hover {
+  color: rgba(154, 205, 50, 0.75);
+  border-color: rgba(154, 205, 50, 0.45);
+  transform: translateY(-2px);
+  background: rgba(216, 235, 235, 0.24);
+}
+
+@media screen and (max-width: 520px) {
+  .landing-page .bg-text {
+    font-size: 44px;
+  }
+}
+@keyframes landingPageBgTextFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes landingPageBgTextBounce{
+    0%{
+        margin-top: -5px;
+    }
+    100%{
+        margin-top: 5px;
+    }
+}
+.landing-page .fog {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  margin-bottom: -10%;
+  left: 0;
+  width: 60%;
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+  filter: hue-rotate(130deg);
+}
+.landing-page .fog:nth-of-type(1) {
+  opacity: 0.1;
+  left: 10%;
+  width: 150%;
+  z-index: 11;
+  bottom: 10%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(2) {
+  width: 90%;
+  left: -76%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(3) {
+  opacity: 0.07;
+  width: 130%;
+  left: -23%;
+  top: 30%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(4) {
+  opacity: 0.09;
+  width: 110%;
+  bottom: -10%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(5) {
+  opacity: 0.1;
+  left: 5%;
+  z-index: 12;
+  width: 150%;
+  bottom: 10%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(6) {
+  width: 90%;
+  left: -87%;
+  animation: landingPageFogAnimation 20s infinite alternate ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(7) {
+  opacity: 0.07;
+  width: 130%;
+  left: -67%;
+  top: 30%;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+.landing-page .fog:nth-of-type(8) {
+  opacity: 0.09;
+  width: 110%;
+  top: -10%;
+  z-index: 14;
+  animation: landingPageFogAnimation 20s infinite alternate-reverse ease-in-out;
+
+}
+
+@keyframes landingPageFogAnimation {
+  0% {
+    margin-left: -50vw;
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100% {
+    margin-left: 50vw;
+    opacity: 0;
+  }
+}

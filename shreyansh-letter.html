@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="shreyansh-letter.css" />
+    <title>Birthdayyayy</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="back" href="letters.html">Back</a>
+      </div>
+    </header>
+
+    <main class="page">
+      <article class="letter" aria-label="Personal birthday letter">
+        <h1 class="letter__title">A Letter From Shreyansh</h1>
+        <div class="letter__meta">
+          <div>Delivered by: <span class="ink">A very polite owl</span></div>
+          <div>Subject: <span class="ink">Your 18th Birthday</span></div>
+        </div>
+
+        <div class="rule"></div>
+
+        <p class="letter__to">Hey <span class="ink">[Friend's Name]</span>,</p>
+
+        <p>
+          Happy 18th birthday! If I could bottle up a bit of Felix Felicis, I'd slip it into this envelope so
+          that every step you take this year feels a little luckier, a little brighter, and a lot more you.
+        </p>
+        <p>
+          This is a placeholder message where you can write the real stuff—the memories, the inside jokes, and
+          the things you'd rather say in a letter than in a caption. Imagine this parchment glowing softly as you
+          read it, like a charm that keeps the best moments close.
+        </p>
+        <p>
+          Wherever life takes you next—new halls, new spells, new adventures—I'm proud of you. Keep your wand
+          steady, your heart kind, and your curiosity alive. The world's a bit more magical with you in it.
+        </p>
+
+        <p class="letter__closing">Always,</p>
+        <p class="letter__sig"><span class="ink">Shreyansh</span></p>
+      </article>
+    </main>
+
+    <!-- Password gate (client-side) -->
+    <div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Password required">
+      <div class="gate__card">
+        <div class="gate__title">Password Required</div>
+        <div class="gate__subtitle">Enter the secret word to open this letter.</div>
+
+        <label class="gate__label" for="password">Password</label>
+        <input
+          class="gate__input"
+          id="password"
+          type="password"
+          autocomplete="off"
+          inputmode="text"
+          placeholder="Type here"
+        />
+
+        <div class="gate__error" id="gateError" aria-live="polite"></div>
+
+        <button class="gate__btn" id="unlockBtn" type="button">Unlock</button>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+      integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="shreyansh-letter.js"></script>
+  </body>
+</html>
