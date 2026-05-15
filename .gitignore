@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# System files
+.DS_Store
+*.log
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/
