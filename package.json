@@ -1,0 +1,26 @@
+{
+  "name": "palbirthdayy",
+  "version": "1.0.0",
+  "description": "Birthday website with Vercel Web Analytics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shreyanshh-py/Palbirthdayy.git"
+  },
+  "keywords": [
+    "birthday",
+    "analytics"
+  ],
+  "author": "Shreyansh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shreyanshh-py/Palbirthdayy/issues"
+  },
+  "homepage": "https://github.com/Shreyanshh-py/Palbirthdayy#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
