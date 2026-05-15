@@ -179,6 +179,11 @@ body::before {
   text-underline-offset: 4px;
 }
 
+.smiley {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;
+}
+
 /* Gate overlay */
 .gate {
   position: fixed;
