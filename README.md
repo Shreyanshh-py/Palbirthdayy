@@ -1,2 +1,2 @@
 # Palbirthdayy
-birthday website for my friend 😭
+A happy birthday website for her 🥰
